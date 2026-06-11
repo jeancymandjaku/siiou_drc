@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode, type ElementType } from "react";
+import { useEffect, useRef, useState, type ElementType } from "react";
 
 export function Reveal({ children, as, delay = 0, className = "" }: RevealProps) {
   const Tag = (as ?? "div") as ElementType;

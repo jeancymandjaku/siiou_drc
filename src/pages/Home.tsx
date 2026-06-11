@@ -1,5 +1,5 @@
 import Committements from "../components/Committements";
-import Hero from "../components/hero";
+import Hero from "../components/Hero";
 import TestimonialsAndGallery from "../components/TestimonialsAndGallery";
 import CTA from "../components/finalCTA";
 import ServicesCom from "../components/ServicesCom";
