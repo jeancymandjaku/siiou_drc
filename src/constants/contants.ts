@@ -10,17 +10,54 @@ import {
   Activity,
   Eye,
   Zap,
-  
 } from "lucide-react";
-import onglet from "../assets/onglet.jpg"
-import herofacial from '../assets/hero-facial.jpg'
-import maquillage from '@/assets/maquuillage.jpg'
-import ig2 from '@/assets/ig-2.jpg'
-import ig1 from '@/assets/ig-1.jpg'
-import epillation from '@/assets/epillation.jpg'
 
-export const WHATSAPP_URL =
-  "https://wa.me/243815252514?text=Bonjour%20SIIOU%2C%20je%20souhaite%20prendre%20rendez-vous.";
+import onglet from "../assets/onglet.jpg";
+import herofacial from '../assets/hero-facial.jpg';
+import maquillage from '@/assets/maquuillage.jpg';
+import ig2 from '@/assets/ig-2.jpg';
+import ig1 from '@/assets/ig-1.jpg';
+import epillation from '@/assets/epillation.jpg';
+
+// Types pour sécuriser la structure des catégories
+interface Item {
+  name: string;
+  price: string;
+}
+
+interface Group {
+  title?: string;
+  items: Item[];
+}
+
+interface SubSection {
+  label: string;
+  groups: Group[];
+}
+
+interface Category {
+  id: string;
+  title: string;
+  icon: React.ComponentType<any>;
+  image: any;
+  seo: string;
+  groups?: Group[];
+  subSections?: SubSection[];
+}
+
+export const WHATSAPP_PHONE = import.meta.env.NEXT_PUBLIC_WHATSAPP_PHONE || "";
+export const WHATSAPP_MSG = encodeURIComponent("Bonjour SIIOU, je souhaite prendre rendez-vous.");
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${WHATSAPP_MSG}`;
+export const CONTACT_PHONE_LABEL = WHATSAPP_PHONE
+  ? `+${WHATSAPP_PHONE.replace(/^(\d{3})(\d{3})(\d{3})(\d{3})$/, "$1 $2 $3 $4")}`
+  : "";
+export const CONTACT_PHONE_HREF = WHATSAPP_PHONE ? `tel:+${WHATSAPP_PHONE}` : "#";
+
+export const LINKS = {
+  WHATSAPP: WHATSAPP_URL,
+  FACEBOOK: "https://facebook.com/siioofficiel",
+  EMAIL: "contact@siiou.com",
+};
 
 export const services = [
   {
@@ -65,22 +102,18 @@ export const commitments = [
 
 export const testimonials = [
   {
-    quote:
-      "Un moment magique chez SIIOU. Le massage thaïlandais traditionnel m'a complètement libéré de mes tensions accumulées. Le personnel est d'une douceur incroyable.",
+    quote: "Un moment magique chez SIIOU. Le massage thaïlandais traditionnel m'a complètement libéré de mes tensions accumulées. Le personnel est d'une douceur incroyable.",
     author: "Sarah K.",
   },
   {
-    quote:
-      "La meilleure onglerie et le spa le plus propre de Lubumbashi. Le sens du détail et l'accueil sont tout simplement irréprochables.",
+    quote: "La meilleure onglerie et le spa le plus propre de Lubumbashi. Le sens du détail et l'accueil sont tout simplement irréprochables.",
     author: "Marc L.",
   },
   {
-    quote:
-      "Une expérience sensorielle complète. Je ressors de chaque séance apaisée, rayonnante et reconnectée à moi-même.",
+    quote: "Une expérience sensorielle complète. Je ressors de chaque séance apaisée, rayonnante et reconnectée à moi-même.",
     author: "Aïcha M.",
   },
 ];
-
 
 export const HOURS = [
   "Lundi : 13h00 – 18h00",
@@ -134,7 +167,7 @@ export const categories: Category[] = [
           { name: "Pose semi-p. french", price: "35 $" },
           { name: "Dépose semi-permanent", price: "15 $" },
           { name: "Dépose semi-p. + pose vernis", price: "25 $" },
-          { name: "Pose + dépose semi-permanent", price: "35$" },
+          { name: "Pose + dépose semi-permanent", price: "35 $" }, // Corrigé : "35$" -> "35 $"
           { name: "Pose + dépose semi-p. avec french", price: "40 $" },
           { name: "Pose tips + semi-p. (sans gel/acrylique)", price: "50 $" },
           { name: "Pose gel/acrylique + semi-p. sans tips", price: "50 $" },

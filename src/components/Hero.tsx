@@ -4,7 +4,7 @@ import ig1 from "../assets/ig-1.jpg";
 import ig2 from "../assets/ig-2.jpg";
 import ig3 from "../assets/ig-3.jpg";
 import ig4 from "../assets/ig-4.jpg";
-import { WHATSAPP_URL } from "../constants/contants";
+import { WHATSAPP_URL } from "../constants/contants"
 import { Star, Users, Gift } from "lucide-react";
 import { Reveal } from "./Reveal";
 

@@ -118,7 +118,6 @@ const Services = () => {
 
                   {/* 1. RENDU DES GROUPES CLASSIQUES */}
                   {category.groups?.map((group, groupIdx) => {
-                    const currentGroupTitle = group.title ?? category.title;
                     return (
                       <div key={`g-${groupIdx}`} className="mb-10 last:mb-0">
                         {group.title ? (
@@ -134,7 +133,6 @@ const Services = () => {
                               <PriceRow
                                 key={`item-${itemIdx}-${item.price}`}
                                 item={item}
-                                categoryTitle={currentGroupTitle}
                                 checked={selectedItems.includes(label)}
                                 onToggle={() => handleToggleItem(label)}
                               />
@@ -171,7 +169,6 @@ const Services = () => {
                                     <PriceRow
                                       key={`ss-i-${itemIdx}-${item.price}`}
                                       item={item}
-                                      categoryTitle={currentGroupTitle}
                                       checked={selectedItems.includes(label)}
                                       onToggle={() => handleToggleItem(label)}
                                     />

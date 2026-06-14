@@ -8,7 +8,12 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Reveal } from "../components/Reveal";
-import { WHATSAPP_URL } from "../constants/contants";
+import {
+  CONTACT_PHONE_HREF,
+  CONTACT_PHONE_LABEL,
+  WHATSAPP_MSG,
+  WHATSAPP_PHONE,
+} from "../constants/contants"
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -26,8 +31,8 @@ const Contact = () => {
     );
 
     setSent(true);
-    // Utilisation de la constante globale WHATSAPP_URL pour construire le lien dynamique
-    window.open(`${WHATSAPP_URL}&text=${text}`, "_blank", "noopener,noreferrer");
+    // Utilisation de la constante globale WHATSAPP_PHONE pour construire le lien dynamique
+    window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${text}`, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -145,7 +150,7 @@ const Contact = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Phone size={18} className="mt-0.5 shrink-0 text-[#c5a880]" />
-                  <a href="tel:+243815252514" className="hover:underline">+243 815 252 514</a>
+                  <a href={CONTACT_PHONE_HREF} className="hover:underline">{CONTACT_PHONE_LABEL}</a>
                 </li>
                 <li className="flex items-start gap-3">
                   <Mail size={18} className="mt-0.5 shrink-0 text-[#c5a880]" />
@@ -174,7 +179,7 @@ const Contact = () => {
                   FB
                 </a>
                 <a
-                  href={WHATSAPP_URL}
+                  href={`https://wa.me/${WHATSAPP_PHONE}?text=${WHATSAPP_MSG}`}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="WhatsApp"

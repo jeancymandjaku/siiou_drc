@@ -1,5 +1,5 @@
 import { Clock, MapPin, MessageCircle } from "lucide-react"
-import { HOURS, WHATSAPP_URL } from "../constants/contants.ts"
+import { HOURS, WHATSAPP_URL } from "../constants/contants"
 import { Link } from "react-router-dom"
 
 const Footer = () => {

@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { WHATSAPP_URL } from "../constants/contants"
 
-
-const WHATSAPP_URL =
-  "https://wa.me/243815252514?text=Bonjour%20SIIOU%2C%20je%20souhaite%20prendre%20rendez-vous.";
 
 
  const navItems: NavItem[] = [

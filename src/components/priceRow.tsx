@@ -1,11 +1,9 @@
 const PriceRow = ({
   item,
-  categoryTitle,
   checked,
   onToggle,
 }: {
   item: Item
-  categoryTitle: string
   checked: boolean
   onToggle: () => void
 }) => {
