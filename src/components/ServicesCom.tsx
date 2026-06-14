@@ -3,7 +3,8 @@ import { services } from "../constants/contants";
 
 const ServicesCom = () => {
   return (
-    <section id="services" className="bg-[#fcfbf7] py-24">
+    // Remplacement de py-24 par pt-12 pb-24 pour réduire la marge supérieure avec le Hero
+    <section id="services" className="bg-[#fcfbf7] pt-12 pb-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.35em] text-[#b08d5b]">

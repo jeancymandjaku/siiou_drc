@@ -10,7 +10,6 @@ import {
 import { Reveal } from "../components/Reveal";
 import { WHATSAPP_URL } from "../constants/contants";
 
-
 const Contact = () => {
   const [form, setForm] = useState({
     name: "",
@@ -19,6 +18,7 @@ const Contact = () => {
     message: "",
   });
   const [sent, setSent] = useState(false);
+
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = encodeURIComponent(
@@ -26,14 +26,16 @@ const Contact = () => {
     );
 
     setSent(true);
-    window.open(`https://wa.me/243815252514?text=${text}`, "_blank", "noopener,noreferrer");
+    // Utilisation de la constante globale WHATSAPP_URL pour construire le lien dynamique
+    window.open(`${WHATSAPP_URL}&text=${text}`, "_blank", "noopener,noreferrer");
   };
 
   return (
+    // Centralisation du background global ici pour éviter les répétitions sur chaque section
     <div className="min-h-screen bg-[#fcfbf7] text-[#2c2520]">
 
       {/* Hero */}
-      <section className="bg-[#fcfbf7] px-6 py-20 lg:px-10 lg:py-24">
+      <section className="px-6 py-20 lg:px-10 lg:py-24">
         <Reveal className="mx-auto max-w-4xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.35em] text-[#b08d5b]">
             Contact & Réservation
@@ -50,9 +52,9 @@ const Contact = () => {
       </section>
 
       {/* Form + Info */}
-      <section className="bg-[#fcfbf7] px-6 pb-24 lg:px-10">
+      <section className="px-6 pb-24 lg:px-10">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-5">
-          {/* Form */}
+          {/* Formulaire */}
           <Reveal className="lg:col-span-3">
             <div className="rounded-3xl border border-[#e8e2d6] bg-white p-8 shadow-sm sm:p-10">
               <h2 className="font-serif text-2xl text-[#2c2520] sm:text-3xl">
@@ -63,6 +65,7 @@ const Contact = () => {
                 votre disponibilité et vos préférences. Notre équipe vous répond personnellement
                 via WhatsApp pour confirmer votre rendez-vous dans les meilleurs délais.
               </p>
+              
               <form onSubmit={onSubmit} className="mt-8 grid gap-5 sm:grid-cols-2">
                 <div className="sm:col-span-1">
                   <label className="text-xs uppercase tracking-wider text-[#5a4f47]">
@@ -131,7 +134,7 @@ const Contact = () => {
             </div>
           </Reveal>
 
-          {/* Info column */}
+          {/* Colonne d'informations */}
           <Reveal as="aside" delay={2} className="lg:col-span-2">
             <div className="rounded-3xl bg-[#2c2520] p-8 text-[#fcfbf7] sm:p-10">
               <h3 className="font-serif text-xl text-[#c5a880]">Notre institut</h3>
@@ -142,18 +145,18 @@ const Contact = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <Phone size={18} className="mt-0.5 shrink-0 text-[#c5a880]" />
-                  <a href="tel:+243815252514">+243 815 252 514</a>
+                  <a href="tel:+243815252514" className="hover:underline">+243 815 252 514</a>
                 </li>
                 <li className="flex items-start gap-3">
                   <Mail size={18} className="mt-0.5 shrink-0 text-[#c5a880]" />
-                  <a href="mailto:contact@siiou.cd">contact@siiou.cd</a>
+                  <a href="mailto:contact@siiou.cd" className="hover:underline">contact@siiou.cd</a>
                 </li>
               </ul>
 
-              <div className="my-8 h-px w-full bg-[#fcfbf7]/15" />
+              <div className="my-8 h-px w-full bg-[#fcfbf7]/15" aria-hidden="true" />
 
               <h3 className="font-serif text-xl text-[#c5a880]">Suivez-nous</h3>
-              <div className="mt-5 flex gap-3">
+              <div className="mt-5 flex flex-wrap gap-3">
                 <a
                   href="https://instagram.com/siiou_drc"
                   target="_blank"
@@ -161,14 +164,14 @@ const Contact = () => {
                   aria-label="Instagram"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#c5a880]/40 text-[#c5a880] transition hover:bg-[#c5a880] hover:text-[#2c2520]"
                 >
-                 Instagram
+                  IG
                 </a>
                 <a
                   href="#"
                   aria-label="Facebook"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#c5a880]/40 text-[#c5a880] transition hover:bg-[#c5a880] hover:text-[#2c2520]"
                 >
-                  Facebook
+                  FB
                 </a>
                 <a
                   href={WHATSAPP_URL}
@@ -185,7 +188,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
