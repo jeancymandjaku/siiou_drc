@@ -56,6 +56,7 @@ export const CONTACT_PHONE_HREF = WHATSAPP_PHONE ? `tel:+${WHATSAPP_PHONE}` : "#
 export const LINKS = {
   WHATSAPP: WHATSAPP_URL,
   FACEBOOK: "https://facebook.com/siioofficiel",
+  INSTAGRAM: "https://instagram.com/siiou_drc",
   EMAIL: "contact@siiou.com",
 };
 
@@ -155,7 +156,7 @@ export const categories: Category[] = [
     title: "Soins des Mains & des Pieds",
     icon: Hand,
     image: onglet,
-    seo: "Découvrez l'excellence de la manucure et de la pédicure médicale à Lubumbashi et Kinshasa. Notre institut propose des rituels de beauté des mains et des pieds haut de gamme, combinant soins cutanés profonds, pose de vernis semi-permanent longue tenue et extensions en gel ou acrylique. Offrez à vos ongles une finition parfaite et un éclat durable dans un cadre exclusif.",
+    seo: "Découvrez l'excellence de la manucure et de la pédicure médicale à Lubumbashi. Notre institut propose des rituels de beauté des mains et des pieds haut de gamme, combinant soins cutanés profonds, pose de vernis semi-permanent longue tenue et extensions en gel ou acrylique. Offrez à vos ongles une finition parfaite et un éclat durable dans un cadre exclusif.",
     groups: [
       {
         title: "Ongles",
@@ -201,7 +202,7 @@ export const categories: Category[] = [
           { name: "Pédicure + pose semi-permanent", price: "55 $" },
           { name: "Pédicure + pose semi-p. french", price: "60 $" },
           { name: "Supplément Spa (Gommage & Massage)", price: "25 $" },
-          { name: "Soins Parafinés", price: "20 $" },
+          { name: "Soin Paraffine", price: "20 $" },
           { name: "Jelly Spa", price: "20 $" },
         ],
       },
@@ -332,7 +333,7 @@ export const categories: Category[] = [
     title: "Nos Épilations Lasers",
     icon: Zap,
     image: epillation,
-    seo: "Dites adieu aux poils grâce à notre technologie d'épilation laser définitive de dernière génération. Adaptée à tous les phototypes de peaux (peaux mates à foncées) à Kinshasa et Lubumbashi, notre expertise garantit une élimination progressive, sécurisée et indolore des poils. Découvrez nos fiches tarifs et forfaits sur-mesure pour hommes et femmes pour le visage, le maillot et le corps.",
+    seo: "Dites adieu aux poils grâce à notre technologie d'épilation laser définitive de dernière génération. Adaptée à tous les phototypes de peaux , notre expertise garantit une élimination progressive, sécurisée et indolore des poils. Découvrez nos fiches tarifs et forfaits sur-mesure pour hommes et femmes pour le visage, le maillot et le corps.",
     subSections: [
       {
         label: "Lifecycle Femmes",

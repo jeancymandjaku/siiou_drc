@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { WHATSAPP_URL } from "../constants/contants"
+import logo from "../assets/logo.png";
 
 
 
@@ -80,9 +81,13 @@ const Header = () => {
           className="flex h-full items-center justify-center"
           aria-label="SIIOU — Accueil"
         >
-          <a href="/" className="font-serif text-3xl tracking-wide text-gold lowercase">
-          siiou
-        </a>
+          <img
+            src={logo}
+            alt="SIIOU"
+            className="h-14 w-14 object-contain"
+            width={56}
+            height={56}
+          />
         </Link>
 
         {/* Liens de navigation */}

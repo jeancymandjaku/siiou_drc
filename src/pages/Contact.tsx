@@ -11,9 +11,11 @@ import { Reveal } from "../components/Reveal";
 import {
   CONTACT_PHONE_HREF,
   CONTACT_PHONE_LABEL,
+  LINKS,
   WHATSAPP_MSG,
   WHATSAPP_PHONE,
 } from "../constants/contants"
+import { FacebookIcon, InstagramIcon } from "../components/SocialIcons";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -163,20 +165,22 @@ const Contact = () => {
               <h3 className="font-serif text-xl text-[#c5a880]">Suivez-nous</h3>
               <div className="mt-5 flex flex-wrap gap-3">
                 <a
-                  href="https://instagram.com/siiou_drc"
+                  href={LINKS.INSTAGRAM}
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#c5a880]/40 text-[#c5a880] transition hover:bg-[#c5a880] hover:text-[#2c2520]"
                 >
-                  IG
+                  <InstagramIcon className="h-4 w-4" />
                 </a>
                 <a
-                  href="#"
+                  href={LINKS.FACEBOOK}
+                  target="_blank"
+                  rel="noreferrer"
                   aria-label="Facebook"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#c5a880]/40 text-[#c5a880] transition hover:bg-[#c5a880] hover:text-[#2c2520]"
                 >
-                  FB
+                  <FacebookIcon className="h-4 w-4" />
                 </a>
                 <a
                   href={`https://wa.me/${WHATSAPP_PHONE}?text=${WHATSAPP_MSG}`}
