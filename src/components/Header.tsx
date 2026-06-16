@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { WHATSAPP_URL } from "../constants/contants"
+import { WHATSAPP_URL } from "../constants/contants";
 import logo from "../assets/logo.png";
 
+// Interface supposée pour NavItem
+interface NavItem {
+  label: string;
+  to?: string;
+  href?: string;
+}
 
-
- const navItems: NavItem[] = [
+const navItems: NavItem[] = [
   { label: "Accueil", to: "/" },
   { label: "Services", to: "/services" },
   { label: "À Propos", to: "/about" },
   { label: "Contact", to: "/contact" },
-]; 
+];
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -31,28 +36,26 @@ const Header = () => {
     };
   }, [open]);
 
-   const isActive = (item: NavItem) => item.to !== undefined && item.to === currentPath;
+  const isActive = (item: NavItem) => item.to !== undefined && item.to === currentPath;
 
-   const renderLink = (item: NavItem, onClick?: () => void, mobile = false) => {
+  const renderLink = (item: NavItem, onClick?: () => void, mobile = false) => {
     const active = isActive(item);
     
+    // En mobile, on utilise flex au lieu de block pour que le survol 
+    // et le clic s'adaptent uniquement à la taille du texte.
     const base = mobile
-      ? "block py-3 text-base tracking-wide text-[#2c2520] transition-colors"
+      ? "flex items-center py-3 text-base tracking-wide text-[#2c2520] transition-colors"
       : "flex items-center h-full text-sm tracking-wide text-[#2c2520] transition hover:text-[#b08d5b]";
       
-    // Modifié : La ligne absolute se base maintenant sur le conteneur du texte interne.
-    //after:bottom-2 remonte la barre plus près du texte. Ajustez à bottom-1 ou bottom-3 selon vos goûts.
-    const activeCls = mobile
-      ? active ? "text-[#b08d5b]" : ""
-      : active 
-        ? "text-[#b08d5b] [&>span]:after:scale-x-100" 
-        : "[&>span]:after:scale-x-0 hover:[&>span]:after:scale-x-100 text-[#2c2520] hover:text-[#b08d5b]";
+    // CORRECTION ICI : Gestion propre du hover mobile et desktop sur l'élément enfant <span>
+    const activeCls = active 
+      ? "text-[#b08d5b] [&>span]:after:scale-x-100" 
+      : "text-[#2c2520] hover:text-[#b08d5b] [&>span]:after:scale-x-0 hover:[&>span]:after:scale-x-100";
       
     const className = `${base} ${activeCls}`.trim();
 
-    // Contenu du lien partagé pour garder l'effet de soulignement identique sur Link et <a>
     const linkContent = (
-      <span className="relative py-2 after:absolute after:bottom-2 after:left-0 after:h-px after:w-full after:bg-[#c5a880] after:origin-left after:transition-transform after:duration-200 ease-out">
+      <span className="relative py-2 after:absolute after:bottom-1 after:left-0 after:h-px after:w-full after:bg-[#c5a880] after:origin-left after:transition-transform after:duration-200 ease-out">
         {item.label}
       </span>
     );
@@ -75,27 +78,29 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-[#e8e2d6]/60 bg-[#fcfbf7]/85 backdrop-blur-md">
       <div className="mx-auto flex h-20 items-center justify-between px-6 lg:px-10 max-w-7xl">
         
-        {/* Logo parfaitement centré verticalement via h-full */}
-        <Link
-          to="/"
-          className="flex h-full items-center justify-center"
-          aria-label="SIIOU — Accueil"
-        >
-          <img
-            src={logo}
-            alt="SIIOU"
-            className="h-14 w-14 object-contain"
-            width={56}
-            height={56}
-          />
-        </Link>
+        {/* Logo */}
+        {/* Logo agrandi */}
+<Link
+  to="/"
+  className="flex h-full items-center justify-center"
+  aria-label="SIIOU — Accueil"
+>
+  <img
+    src={logo}
+    alt="SIIOU"
+    
+    className="h-16 w-16 object-contain" 
+    width={84} 
+    height={84}
+  />
+</Link>
 
-        {/* Liens de navigation */}
+        {/* Liens de navigation Desktop */}
         <nav aria-label="Navigation principale" className="hidden items-center gap-10 md:flex h-full">
           {navItems.map((item) => renderLink(item))}
         </nav>
 
-        {/* Bouton d'action */}
+        {/* Bouton d'action Desktop */}
         <div className="hidden items-center md:flex h-full">
           <a
             href={WHATSAPP_URL}
@@ -143,14 +148,15 @@ const Header = () => {
         }`}
         aria-hidden={!open}
       >
-        <nav aria-label="Navigation mobile" className="flex flex-col gap-1 px-6 py-4">
+        {/* Changement ici : items-start pour que les liens ne s'étirent pas à 100% de la largeur */}
+        <nav aria-label="Navigation mobile" className="flex flex-col items-start gap-1 px-6 py-4">
           {navItems.map((item) => renderLink(item, () => setOpen(false), true))}
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
             onClick={() => setOpen(false)}
-            className="mt-3 rounded-full bg-[#c5a880] px-6 py-3 text-center text-sm font-medium text-[#fcfbf7] transition hover:bg-[#b08d5b]"
+            className="mt-3 w-full rounded-full bg-[#c5a880] px-6 py-3 text-center text-sm font-medium text-[#fcfbf7] transition hover:bg-[#b08d5b]"
           >
             Prendre Rendez-vous
           </a>
@@ -160,4 +166,4 @@ const Header = () => {
   );
 };
 
-export default Header
+export default Header;
