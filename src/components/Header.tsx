@@ -40,18 +40,18 @@ const Header = () => {
 
   const renderLink = (item: NavItem, onClick?: () => void, mobile = false) => {
     const active = isActive(item);
-    
+
     // En mobile, on utilise flex au lieu de block pour que le survol 
     // et le clic s'adaptent uniquement à la taille du texte.
     const base = mobile
       ? "flex items-center py-3 text-base tracking-wide text-[#2c2520] transition-colors"
       : "flex items-center h-full text-sm tracking-wide text-[#2c2520] transition hover:text-[#b08d5b]";
-      
+
     // CORRECTION ICI : Gestion propre du hover mobile et desktop sur l'élément enfant <span>
-    const activeCls = active 
-      ? "text-[#b08d5b] [&>span]:after:scale-x-100" 
+    const activeCls = active
+      ? "text-[#b08d5b] [&>span]:after:scale-x-100"
       : "text-[#2c2520] hover:text-[#b08d5b] [&>span]:after:scale-x-0 hover:[&>span]:after:scale-x-100";
-      
+
     const className = `${base} ${activeCls}`.trim();
 
     const linkContent = (
@@ -77,23 +77,23 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-[#e8e2d6]/60 bg-[#fcfbf7]/85 backdrop-blur-md">
       <div className="mx-auto flex h-20 items-center justify-between px-6 lg:px-10 max-w-7xl">
-        
+
         {/* Logo */}
         {/* Logo agrandi */}
-<Link
-  to="/"
-  className="flex h-full items-center justify-center"
-  aria-label="SIIOU — Accueil"
->
-  <img
-    src={logo}
-    alt="SIIOU"
-    
-    className="h-16 w-16 object-contain" 
-    width={84} 
-    height={84}
-  />
-</Link>
+        <Link
+          to="/"
+          className="flex h-full items-center justify-center"
+          aria-label="SIIOU — Accueil"
+        >
+          <img
+            src={logo}
+            alt="SIIOU"
+
+            className="h-16 w-16 object-contain"
+            width={84}
+            height={84}
+          />
+        </Link>
 
         {/* Liens de navigation Desktop */}
         <nav aria-label="Navigation principale" className="hidden items-center gap-10 md:flex h-full">
@@ -125,15 +125,13 @@ const Header = () => {
             <span className="relative block h-6 w-6">
               <Menu
                 size={24}
-                className={`absolute inset-0 transition-all duration-300 ${
-                  open ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
-                }`}
+                className={`absolute inset-0 transition-all duration-300 ${open ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
+                  }`}
               />
               <X
                 size={24}
-                className={`absolute inset-0 transition-all duration-300 ${
-                  open ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
-                }`}
+                className={`absolute inset-0 transition-all duration-300 ${open ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
+                  }`}
               />
             </span>
           </button>
@@ -143,9 +141,8 @@ const Header = () => {
       {/* Menu Déroulant Mobile */}
       <div
         id="mobile-nav"
-        className={`md:hidden overflow-hidden border-t border-[#e8e2d6] bg-[#fcfbf7] transition-[max-height,opacity] duration-300 ease-out ${
-          open ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden overflow-hidden border-t border-[#e8e2d6] bg-[#fcfbf7] transition-[max-height,opacity] duration-300 ease-out ${open ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
+          }`}
         aria-hidden={!open}
       >
         {/* Changement ici : items-start pour que les liens ne s'étirent pas à 100% de la largeur */}
