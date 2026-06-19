@@ -1,9 +1,9 @@
-import heroSpa from "../assets/hero-spa.jpg";
-import heroFacial from "../assets/hero-facial.jpg";
-import ig1 from "../assets/ig-1.jpg";
-import ig2 from "../assets/ig-2.jpg";
-import ig3 from "../assets/ig-3.jpg";
-import ig4 from "../assets/ig-4.jpg";
+import heroSpa from "../assets/hero-spa.webp";
+import heroFacial from "../assets/hero-facial.webp";
+import ig1 from "../assets/ig-1.webp";
+import ig2 from "../assets/ig-2.webp";
+import ig3 from "../assets/ig-3.webp";
+import ig4 from "../assets/ig-4.webp";
 import { WHATSAPP_URL } from "../constants/contants"
 import { Star, Users, Gift } from "lucide-react";
 import { Reveal } from "./Reveal";
@@ -101,6 +101,7 @@ const Hero = () => {
             alt="Cabine spa duo de l'institut SIIOU DRC à Lubumbashi — ambiance feutrée"
             width={896}
             height={1152}
+            loading="lazy"
             className="absolute right-0 top-0 h-[80%] w-[78%] rounded-3xl object-cover shadow-xl [filter:saturate(0.7)_hue-rotate(340deg)_brightness(1.02)_contrast(0.95)] transition duration-500 cursor-pointer"
           />
           <img

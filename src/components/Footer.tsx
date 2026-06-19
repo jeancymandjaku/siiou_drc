@@ -2,7 +2,7 @@ import { Clock, MapPin, MessageCircle } from "lucide-react"
 import { HOURS, LINKS, WHATSAPP_URL } from "../constants/contants"
 import { Link } from "react-router-dom"
 import { FacebookIcon, InstagramIcon } from "./SocialIcons"
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.svg"
 
 const Footer = () => {
   return (

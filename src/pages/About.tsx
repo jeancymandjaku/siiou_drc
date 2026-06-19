@@ -1,6 +1,6 @@
 import { Flower2, MessageCircle } from "lucide-react";
-import spa from "../assets/spa.jpg";
-import psy from "../assets/psy.jpg";
+import spa from "../assets/spa.webp";
+import psy from "../assets/psy.webp";
 import { Reveal } from "../components/Reveal";
 import { values, WHATSAPP_URL } from "../constants/contants";
 

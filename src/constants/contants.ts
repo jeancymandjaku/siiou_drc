@@ -12,12 +12,12 @@ import {
   Zap,
 } from "lucide-react";
 
-import onglet from "../assets/onglet.jpg";
-import herofacial from '../assets/hero-facial.jpg';
-import maquillage from '@/assets/maquuillage.jpg';
-import ig2 from '@/assets/ig-2.jpg';
-import ig1 from '@/assets/ig-1.jpg';
-import epillation from '@/assets/epillation.jpg';
+import onglet from "../assets/onglet.webp";
+import herofacial from '../assets/hero-facial.webp';
+import maquillage from '@/assets/maquuillage.webp';
+import ig2 from '@/assets/ig-2.webp';
+import ig1 from '@/assets/ig-1.webp';
+import epillation from '@/assets/epillation.webp';
 
 // Types pour sécuriser la structure des catégories
 interface Item {

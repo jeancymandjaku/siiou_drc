@@ -1,11 +1,11 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
-import ig1 from '../assets/ig-1.jpg';
-import ig2 from '../assets/ig-2.jpg';
-import ig3 from '../assets/ig-3.jpg';
-import ig4 from '../assets/ig-4.jpg';
-import ig5 from '../assets/ig-5.jpg';
-import ig6 from '../assets/ig-6.jpg';
+import ig1 from '../assets/ig-1.webp';
+import ig2 from '../assets/ig-2.webp';
+import ig3 from '../assets/ig-3.webp';
+import ig4 from '../assets/ig-4.webp';
+import ig5 from '../assets/ig-5.webp';
+import ig6 from '../assets/ig-6.webp';
 import { testimonials } from '../constants/contants';
 
 const TestimonialsAndGallery = () => {
