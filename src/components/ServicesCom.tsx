@@ -1,9 +1,9 @@
 import { Reveal } from "./Reveal";
 import { services } from "../constants/contants";
+import { Link } from "react-router-dom";
 
 const ServicesCom = () => {
   return (
-    // Remplacement de py-24 par pt-12 pb-24 pour réduire la marge supérieure avec le Hero
     <section id="services" className="bg-[#fcfbf7] pt-12 pb-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
@@ -17,6 +17,7 @@ const ServicesCom = () => {
             Découvrez nos trois pôles d'excellence dédiés à votre beauté et à votre relaxation.
           </p>
         </div>
+        
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {services.map((s, i) => (
             <Reveal
@@ -33,17 +34,22 @@ const ServicesCom = () => {
             </Reveal>
           ))}
         </div>
+        
         <div className="mt-14 text-center">
-          <a
-            href="Services"
+          {/* 
+            2. Remplacement de <a> par <Link> 
+            et de href="services" par to="/services"
+          */}
+          <Link
+            to="/services"
             className="inline-block rounded-full border border-[#2c2520] px-8 py-4 text-sm font-medium text-[#2c2520] transition hover:bg-[#2c2520] hover:text-[#fcfbf7]"
           >
             Voir la carte complète des soins
-          </a>
+          </Link>
         </div>
       </div>
     </section>
   )
 }
 
-export default ServicesCom
+export default ServicesCom;
