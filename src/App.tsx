@@ -1,4 +1,4 @@
-import  { Suspense, lazy } from "react";
+import { lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 
@@ -9,19 +9,6 @@ const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NoPage = lazy(() => import("./pages/NoPage"));
 
-// Un loader léger et épuré pour combler l'attente du réseau (Moins de 10ms à s'afficher)
-const PageLoader = () => (
-  <div style={{ 
-    display: "flex", 
-    justifyContent: "center", 
-    alignItems: "center", 
-    minHeight: "50vh",
-    fontFamily: "sans-serif",
-    color: "#666"
-  }}>
-    <div className="animate-pulse">Chargement en cours...</div>
-  </div>
-);
 
 const App = () => {
   return (
@@ -34,42 +21,40 @@ const App = () => {
           */}
           <Route
             index
-            element={
-              <Suspense fallback={<PageLoader />}>
-                <Home />
-              </Suspense>
+            element=
+            {
+              <Home />
             }
           />
           <Route
             path="services"
             element={
-              <Suspense fallback={<PageLoader />}>
-                <Services />
-              </Suspense>
+
+              <Services />
             }
           />
           <Route
             path="about"
             element={
-              <Suspense fallback={<PageLoader />}>
-                <About />
-              </Suspense>
+
+              <About />
+
             }
           />
           <Route
             path="contact"
             element={
-              <Suspense fallback={<PageLoader />}>
-                <Contact />
-              </Suspense>
+
+              <Contact />
+
             }
           />
           <Route
             path="*"
             element={
-              <Suspense fallback={<PageLoader />}>
-                <NoPage />
-              </Suspense>
+
+              <NoPage />
+
             }
           />
         </Route>

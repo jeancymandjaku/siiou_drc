@@ -42,7 +42,7 @@ const Contact = () => {
     <div className="min-h-screen bg-[#fcfbf7] text-[#2c2520]">
 
       {/* Hero */}
-      <section className="px-6 py-20 lg:px-10 lg:py-24">
+      <section className="px-6 py-20 lg:px-15 lg:py-15">
         <Reveal className="mx-auto max-w-4xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.35em] text-[#b08d5b]">
             Contact & Réservation

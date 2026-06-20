@@ -36,10 +36,9 @@ const Services = () => {
   };
 
   return (
-    <main className="bg-[#fcfbf7] py-24 scroll-smooth">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <Reveal>
-          <div className="mx-auto max-w-2xl text-center">
+    <main className="bg-[#fcfbf7] py-10 scroll-smooth lg:px-15 lg:py-15">
+        <Reveal className=" mx-auto max-w-4xl text-center">
+          <div >
             <p className="text-xs font-medium uppercase tracking-[0.35em] text-[#b08d5b]">
               Carte des soins
             </p>
@@ -228,7 +227,6 @@ const Services = () => {
             </div>
           </aside>
         </div>
-      </div>
     </main>
   );
 };

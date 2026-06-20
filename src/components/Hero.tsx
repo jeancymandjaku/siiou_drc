@@ -11,8 +11,8 @@ import { Reveal } from "./Reveal";
 const Hero = () => {
   return (
     <section id="accueil" className="relative overflow-hidden bg-[#fcfbf7]">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:gap-16 lg:px-10 lg:py-28">
-        <Reveal>
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:gap-16 lg:px-15 lg:py-15">
+        <Reveal className="mx-auto max-w-4xl text-center">
           <p className="mb-6 text-xs font-medium uppercase tracking-[0.35em] text-[#b08d5b]">
             Institut de Beauté & Spa de Luxe
           </p>
