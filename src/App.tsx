@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
+import { Analytics } from "@vercel/analytics/react";
 
 // Chargement à la demande (Lazy Loading) des pages
 const Home = lazy(() => import("./pages/Home"));
@@ -59,6 +60,7 @@ const App = () => {
           />
         </Route>
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 };
