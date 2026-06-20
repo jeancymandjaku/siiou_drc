@@ -5,10 +5,11 @@ type NavItem = {
   href?: string;
 };
 
+
 type RevealProps = {
   children: ReactNode;
   as?: ElementType;
-  delay?: 0 | 1 | 2 | 3 | 4;
+  delay?: number;
   className?: string;
 };
 
