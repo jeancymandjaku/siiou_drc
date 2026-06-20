@@ -1,4 +1,4 @@
-import { WHATSAPP_URL } from "../constants/contants"
+import { WHATSAPP_URL } from "../constants/constants"
 import { MessageCircle } from 'lucide-react'
 
 const CTA = () => {

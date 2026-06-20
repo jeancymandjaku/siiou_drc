@@ -14,7 +14,7 @@ import {
   LINKS,
   WHATSAPP_MSG,
   WHATSAPP_PHONE,
-} from "../constants/contants"
+} from "../constants/constants"
 import { FacebookIcon, InstagramIcon } from "../components/SocialIcons";
 
 const Contact = () => {

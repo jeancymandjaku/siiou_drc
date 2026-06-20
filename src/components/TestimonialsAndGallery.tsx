@@ -6,7 +6,7 @@ import ig3 from '../assets/ig-3.webp';
 import ig4 from '../assets/ig-4.webp';
 import ig5 from '../assets/ig-5.webp';
 import ig6 from '../assets/ig-6.webp';
-import { testimonials } from '../constants/contants';
+import { testimonials } from '../constants/constants';
 
 const TestimonialsAndGallery = () => {
   const [idx, setIdx] = useState(0);

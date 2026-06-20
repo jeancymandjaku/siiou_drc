@@ -1,4 +1,4 @@
-import { commitments } from "../constants/contants"
+import { commitments } from "../constants/constants"
 import { Reveal } from "./Reveal"
 
 const Committements = () => {

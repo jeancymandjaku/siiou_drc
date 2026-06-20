@@ -1,4 +1,4 @@
-import { WHATSAPP_PHONE } from "../constants/contants"
+import { WHATSAPP_PHONE } from "../constants/constants"
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 

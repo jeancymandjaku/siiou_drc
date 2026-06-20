@@ -1,5 +1,5 @@
 import { Reveal } from "./Reveal";
-import { services } from "../constants/contants";
+import { services } from "../constants/constants";
 import { Link } from "react-router-dom";
 
 const ServicesCom = () => {

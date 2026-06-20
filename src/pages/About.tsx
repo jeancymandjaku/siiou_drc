@@ -2,7 +2,7 @@ import { Flower2, MessageCircle } from "lucide-react";
 import spa from "../assets/spa.webp";
 import psy from "../assets/psy.webp";
 import { Reveal } from "../components/Reveal";
-import { values, WHATSAPP_URL } from "../constants/contants";
+import { values, WHATSAPP_URL } from "../constants/constants"; // Correction de l'orthographe du fichier
 
 const About = () => {
   return (
@@ -36,7 +36,7 @@ const About = () => {
               width={896}
               height={1152}
               sizes="(max-width: 1024px) 80vw, 40vw"
-              className="absolute left-0 top-0 h-[80%] w-[78%] rounded-3xl object-cover shadow-xl"
+              className="pointer-events-none absolute left-0 top-0 h-[80%] w-[78%] rounded-3xl object-cover shadow-xl"
             />
             <img
               src={spa}
@@ -45,7 +45,7 @@ const About = () => {
               width={896}
               height={850}
               sizes="(max-width: 1024px) 55vw, 25vw"
-              className="absolute bottom-0 right-0 h-[55%] w-[55%] rounded-3xl border-[6px] border-[#f7f4ef] object-cover shadow-2xl"
+              className="pointer-events-none absolute bottom-0 right-0 h-[55%] w-[55%] rounded-3xl border-[6px] border-[#f7f4ef] object-cover shadow-2xl"
             />
           </Reveal>
           <Reveal delay={2}>
@@ -59,7 +59,7 @@ const About = () => {
               Inspirés par les rituels traditionnels d'Asie et les avancées modernes de la cosmétique,
               nos protocoles allient tradition et innovation. Chaque soin est une cérémonie : la
               lumière tamisée, les arômes choisis, les gestes précis de nos thérapeutes vous
-              inventent à un voyage sensoriel hors du temps.
+              invitent à un voyage sensoriel hors du temps.
             </p>
             <p className="mt-4 text-base leading-relaxed text-[#5a4f47]">
               Nous croyons que prendre soin de soi n'est pas un luxe, c'est une nécessité. Notre

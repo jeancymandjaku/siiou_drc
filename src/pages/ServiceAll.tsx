@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import PriceRow from "@/components/priceRow";
-import { categories } from "@/constants/contants";
+import { categories } from "@/constants/constants";
 import { bookingHref } from "@/lib/utils";
 import { Reveal } from "@/components/Reveal";
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { WHATSAPP_URL } from "../constants/contants";
+import { WHATSAPP_URL } from "../constants/constants";
 import logo from "../assets/logo.svg";
 
 // Interface supposée pour NavItem

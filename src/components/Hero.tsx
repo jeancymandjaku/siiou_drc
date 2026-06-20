@@ -4,7 +4,7 @@ import ig1 from "../assets/ig-1.webp";
 import ig2 from "../assets/ig-2.webp";
 import ig3 from "../assets/ig-3.webp";
 import ig4 from "../assets/ig-4.webp";
-import { WHATSAPP_URL } from "../constants/contants";
+import { WHATSAPP_URL } from "../constants/constants";
 import { Star, Users, Gift } from "lucide-react";
 import { Reveal } from "./Reveal";
 
@@ -113,7 +113,7 @@ const Hero = () => {
                   src={heroSpa}
                   alt="Cabine spa duo de l'institut SIIOU DRC à Lubumbashi"
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="pointer-events-none h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
               
@@ -123,7 +123,7 @@ const Hero = () => {
                   src={heroFacial}
                   alt="Soin sourcils et visage réalisé chez SIIOU"
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="pointer-events-none h-full w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
 
