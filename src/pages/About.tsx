@@ -4,10 +4,9 @@ import psy from "../assets/psy.webp";
 import { Reveal } from "../components/Reveal";
 import { values, WHATSAPP_URL } from "../constants/contants";
 
-
 const About = () => {
   return (
-     <div className="min-h-screen bg-[#fcfbf7] text-[#2c2520]">
+    <div className="min-h-screen bg-[#fcfbf7] text-[#2c2520]">
 
       {/* Hero */}
       <section className="bg-[#fcfbf7] px-6 py-20 lg:px-15 lg:py-15">
@@ -36,6 +35,7 @@ const About = () => {
               alt="Présentoir de produits Thalgo à l'institut SIIOU DRC à Lubumbashi"
               width={896}
               height={1152}
+              sizes="(max-width: 1024px) 80vw, 40vw"
               className="absolute left-0 top-0 h-[80%] w-[78%] rounded-3xl object-cover shadow-xl"
             />
             <img
@@ -44,6 +44,7 @@ const About = () => {
               loading="lazy"
               width={896}
               height={850}
+              sizes="(max-width: 1024px) 55vw, 25vw"
               className="absolute bottom-0 right-0 h-[55%] w-[55%] rounded-3xl border-[6px] border-[#f7f4ef] object-cover shadow-2xl"
             />
           </Reveal>
@@ -58,7 +59,7 @@ const About = () => {
               Inspirés par les rituels traditionnels d'Asie et les avancées modernes de la cosmétique,
               nos protocoles allient tradition et innovation. Chaque soin est une cérémonie : la
               lumière tamisée, les arômes choisis, les gestes précis de nos thérapeutes vous
-              invitent à un voyage sensoriel hors du temps.
+              inventent à un voyage sensoriel hors du temps.
             </p>
             <p className="mt-4 text-base leading-relaxed text-[#5a4f47]">
               Nous croyons que prendre soin de soi n'est pas un luxe, c'est une nécessité. Notre
@@ -69,7 +70,7 @@ const About = () => {
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-[#c5a880] px-8 py-4 text-sm font-medium text-[#fcfbf7] shadow-sm transition hover:scale-105 hover:bg-[#b08d5b]"
               >
                 <MessageCircle size={16} /> Réserver sur WhatsApp
@@ -87,7 +88,7 @@ const About = () => {
               Nos Valeurs
             </p>
             <h2 className="mt-4 font-serif text-3xl text-[#2c2520] sm:text-4xl lg:text-5xl">
-              Cinq piliers, <em className="italic text-[#b08d5b]">une promesse</em>
+              Quatre piliers, <em className="italic text-[#b08d5b]">une promesse</em>
             </h2>
           </div>
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -134,7 +135,7 @@ const About = () => {
             <a
               href={WHATSAPP_URL}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-[#c5a880] px-8 py-4 text-sm font-medium text-[#2c2520] transition hover:scale-105 hover:bg-[#d4bb96]"
             >
               <MessageCircle size={18} /> Réserver un soin
@@ -146,4 +147,4 @@ const About = () => {
   )
 }
 
-export default About
+export default About;
