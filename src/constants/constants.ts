@@ -45,9 +45,17 @@ interface Category {
   subSections?: SubSection[];
 }
 
-export const WHATSAPP_PHONE = import.meta.env.VITE_WHATSAPP_PHONE || "";
-export const WHATSAPP_MSG = encodeURIComponent("Bonjour SIIOU, je souhaite prendre rendez-vous.");
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${WHATSAPP_MSG}`;
+const DEFAULT_WHATSAPP_PHONE = "243815252514";
+
+const formatWhatsappPhone = (phone?: string) => phone?.replace(/\D/g, "") || "";
+
+export const WHATSAPP_PHONE =
+  formatWhatsappPhone(import.meta.env.VITE_WHATSAPP_PHONE) || DEFAULT_WHATSAPP_PHONE;
+export const WHATSAPP_TEXT = "Bonjour SIIOU, je souhaite prendre rendez-vous.";
+export const WHATSAPP_MSG = encodeURIComponent(WHATSAPP_TEXT);
+export const createWhatsAppUrl = (message = WHATSAPP_TEXT) =>
+  `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+export const WHATSAPP_URL = createWhatsAppUrl();
 export const CONTACT_PHONE_LABEL = WHATSAPP_PHONE
   ? `+${WHATSAPP_PHONE.replace(/^(\d{3})(\d{3})(\d{3})(\d{3})$/, "$1 $2 $3 $4")}`
   : "";
