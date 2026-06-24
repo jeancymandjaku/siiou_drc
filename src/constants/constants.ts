@@ -45,7 +45,7 @@ interface Category {
   subSections?: SubSection[];
 }
 
-export const WHATSAPP_PHONE = import.meta.env.NEXT_PUBLIC_WHATSAPP_PHONE || "";
+export const WHATSAPP_PHONE = import.meta.env.VITE_WHATSAPP_PHONE || "";
 export const WHATSAPP_MSG = encodeURIComponent("Bonjour SIIOU, je souhaite prendre rendez-vous.");
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${WHATSAPP_MSG}`;
 export const CONTACT_PHONE_LABEL = WHATSAPP_PHONE
